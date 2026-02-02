@@ -1,0 +1,146 @@
+from loguru import logger
+
+"""Level 1: Basic Loops & Iterations (1-10)
+#----------------------------------------------
+1- Print numbers from 1 to 100
+2- Print all even numbers between 1 to 50
+3- Print all odd numbers from 1 to 50
+4 -Calculate sum of first 100 natural numbers
+5 -Print multiplication table of any given number
+6- Count how many times a specific element appears in a list
+7- Find the length of a list without using len() function
+8- Print all elements of a list in reverse order (without reverse())
+9- Calculate factorial of a number using loop
+10- Print first 10 Fibonacci numbers"""
+
+#1- 
+
+num = []
+logger.info([(i) for i in range(1,101)])
+[print(i)for i in range(1,101)]
+num = []
+for i in range(1,101):
+    num.append(i)
+
+print(num)   
+
+#2- f
+even = []
+odd = []
+for i in range(1,51):
+    if i %2==0:
+        even.append(i)
+    else:
+        odd.append(i)
+
+logger.info(f"these are even number :, {even}, these are odd numbers: {odd}")
+
+even_lc = [i for i in range(1,51) if i %2==0]
+odd_lc = [i for i in range(1,51) if i %2!=0]
+print(even_lc)
+print(odd_lc)
+
+#4 - 
+
+total = 0
+
+for i in range(1,101):
+    total+=i
+print(total)
+
+total = sum([(i) for i in range(1,101)])
+logger.info(total)
+
+
+
+#5 - multiple of any number
+
+table = 0
+multi = 0
+
+for i in range(1,11):
+    table +=i
+    for j in range(1,10):
+        multi = j*i
+        #table * i
+
+logger.info(multi)    
+
+#6- 
+table = 0
+
+for i in range(1,11):
+    for j in range(1,10):
+        table+=i
+print(f'{i}*{j}') 
+print(table)
+
+table = 0
+
+for i in range(1,11):
+    for j in range(1,11):
+       table+=i*j 
+print(table)
+
+num = 5
+
+for i in range(num, num+1):
+    for j in range(1,11):
+     
+     print(f"{i} X {j} = {i*j}")
+
+#7
+
+lst = [1,2,4,6]
+
+len_lst = 0
+
+for i in lst:
+   len_lst+=1
+logger.info(len_lst)   
+
+
+#8
+
+ls1 = ["g","u","r","m","u","k","h", "abcdef"]
+ls2 = [1,2,4,5,6]
+
+print(ls1[::-1])
+print(ls2[::-1])
+
+#9
+
+fact = 1
+
+for i in range(1,6):
+   fact*=i
+
+print(fact) 
+
+def facto(n):
+    result = 1
+    for i in range(1,n+1):
+      result*=i
+    return result
+   
+factorial = facto(5)  
+print(factorial) 
+
+#10 - 
+
+def fibonacci(n):
+   fibo = []
+   a , b = 0, 1
+   for i in range(n):
+      fibo.append(a)
+      a, b =b, a+b
+      
+   return fibo  
+
+
+fibonacci_result = fibonacci(10)
+print(fibonacci_result)
+
+      
+   
+
